@@ -5,7 +5,10 @@ const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
 module.exports = {
   mode: 'production',
   devtool: 'source-map',
-  entry: './src/index.js',
+  entry: {
+    'polls/index': './src/index.js',
+    'polls/material_index': './src/material_index.js'
+  },
   plugins: [
       new CleanWebpackPlugin(),  
       new WebpackManifestPlugin({ generate: (seed, files, entries) => entries}), 
