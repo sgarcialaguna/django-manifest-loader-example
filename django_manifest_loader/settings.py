@@ -122,3 +122,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [f'{BASE_DIR}/dist']
+
+from .loader import MyLoader
+MANIFEST_LOADER = {
+    'loader': MyLoader
+}

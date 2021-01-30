@@ -3,12 +3,12 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   devtool: 'source-map',
   entry: './src/index.js',
   plugins: [
       new CleanWebpackPlugin(),  
-      new WebpackManifestPlugin(), 
+      new WebpackManifestPlugin({ generate: (seed, files, entries) => entries}), 
   ],
   output: {
     publicPath: '',
